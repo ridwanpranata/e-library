@@ -34,7 +34,8 @@
                                                 $result = mysqli_num_rows($data);
                                                 if($result > 0) {
                                                     $_SESSION['user'] = mysqli_fetch_array($data);
-                                                    echo '<script>alert(`Login Success, Welcome :)`); location.href="index.php"</script>';
+                                                    $user_name = $_SESSION['user']['name'];
+                                                    echo '<script>alert(`Login Success, Welcome ' . $username . ' :)`); location.href="index.php"</script>';
                                                 } else {
                                                     echo '<script>alert(`Wrong Username / Password`);</script>';
                                                 }
